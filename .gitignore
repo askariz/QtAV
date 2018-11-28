@@ -88,3 +88,5 @@ python/QtAVWidgets
 
 #cache
 *.swp
+
+cmake-build*

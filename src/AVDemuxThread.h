@@ -27,7 +27,7 @@
 #include <QtCore/QThread>
 #include <QtCore/QRunnable>
 #include "PacketBuffer.h"
-
+#include <limits>
 namespace QtAV {
 
 class AVDemuxer;

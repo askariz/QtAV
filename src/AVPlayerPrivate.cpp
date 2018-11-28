@@ -28,6 +28,7 @@
 #include "QtAV/MediaIO.h"
 #include "QtAV/VideoCapture.h"
 #include "QtAV/private/AVCompat.h"
+#include <QtGlobal>
 #if AV_MODULE_CHECK(LIBAVFORMAT, 55, 18, 0, 39, 100)
 extern "C" {
 #include <libavutil/display.h>
@@ -335,7 +336,7 @@ void AVPlayer::Private::initVideoStatistics(int s)
     quint8 *sd = av_stream_get_side_data(demuxer.formatContext()->streams[s], AV_PKT_DATA_DISPLAYMATRIX, NULL);
     if (sd) {
         double r = av_display_rotation_get((qint32*)sd);
-        if (!qIsNaN(r))
+        //if (!qIsNaN(r))
             statistics.video_only.rotate = ((int)r + 360) % 360;
     }
 #endif
